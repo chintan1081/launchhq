@@ -12,7 +12,7 @@ export function Header() {
             <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
               <Zap className="h-4 w-4 text-primary-foreground" />
             </div>
-            Shadcn Studio
+            LaunchHQ
           </Link>
 
           <nav className="hidden md:flex items-center gap-6">
