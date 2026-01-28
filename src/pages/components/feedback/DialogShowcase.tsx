@@ -39,7 +39,7 @@ export default function DialogShowcase() {
           </DialogTrigger>
           <DialogContent className="sm:max-w-[425px]">
             <DialogHeader>
-              <DialogTitle>Welcome to UI Forge</DialogTitle>
+              <DialogTitle>Welcome to LaunchHQ</DialogTitle>
               <DialogDescription>
                 This is a basic dialog component. It can be used to display
                 important information or collect user input.

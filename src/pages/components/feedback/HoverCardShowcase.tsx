@@ -145,7 +145,7 @@ export default function HoverCardShowcase() {
                 <div className="space-y-1">
                   <h4 className="font-semibold">John Doe</h4>
                   <p className="text-sm text-muted-foreground">
-                    Senior Developer at UI Forge
+                    Senior Developer at LaunchHQ
                   </p>
                   <div className="flex gap-4 text-xs text-muted-foreground">
                     <span>42 projects</span>

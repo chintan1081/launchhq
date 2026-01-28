@@ -74,7 +74,7 @@ export default function NavMenuShowcase() {
                         href="#"
                       >
                         <div className="mb-2 mt-4 text-lg font-medium text-white">
-                          UI Forge
+                          LaunchHQ
                         </div>
                         <p className="text-sm leading-tight text-white/80">
                           Beautiful components built with Radix UI and Tailwind CSS.
