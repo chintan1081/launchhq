@@ -246,7 +246,7 @@ export default function Index() {
         <section className="py-40 text-center bg-background relative overflow-hidden">
           <div className="absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
           <div className="container px-4 mx-auto">
-            <h2 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8">Build faster.<br />Ship with confidence.</h2>
+            <h2 className="text-6xl md:text-7xl font-bold tracking-tighter mb-8">Build faster.<br />Ship with confidence.</h2>
             <p className="text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto">Stop rewriting the same setup. Start building real products.</p>
             <Button size="lg" className="h-16 px-12 text-xl rounded-full shadow-2xl hover:scale-105 transition-transform" asChild>
               <Link to="/components">

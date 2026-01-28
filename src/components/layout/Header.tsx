@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { Zap, Github, Command } from "lucide-react";
+import RocketIcon from "@/components/Icon";
 
 export function Header() {
   return (
@@ -10,7 +11,7 @@ export function Header() {
         <div className="flex items-center gap-8">
           <Link to="/" className="flex items-center gap-2 font-bold text-xl">
             <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-              <Zap className="h-4 w-4 text-primary-foreground" />
+              <div className="text-primary-foreground text-2xl">L</div>
             </div>
             LaunchHQ
           </Link>
@@ -34,7 +35,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <Button variant="ghost" size="icon" asChild>
             <a
-              href="https://github.com"
+              href="https://github.com/chintan1081/launchhq"
               target="_blank"
               rel="noopener noreferrer"
             >
