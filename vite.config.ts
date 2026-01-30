@@ -11,6 +11,9 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
+  build: {
+    outDir: "dist"
+  },
   plugins: [react()].filter(Boolean),
   resolve: {
     alias: {
