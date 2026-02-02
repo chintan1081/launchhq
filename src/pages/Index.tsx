@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Header } from "@/components/layout/Header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -10,7 +11,8 @@ import {
   Layout,
   Server,
   Code2,
-  Rocket
+  Rocket,
+  Star
 } from "lucide-react";
 import {
   Accordion,
@@ -18,54 +20,79 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { HexagonBackground } from "@/components/animate-ui/components/backgrounds/hexagon";
+import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern";
 
 export default function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-foreground selection:text-background flex flex-col">
       <Header />
 
-      <main className="flex-1">
+      <main className="flex-1  md:mx-36 border-x border-border/50">
         {/* 1. HERO SECTION */}
-        <section className="relative pt-24 pb-32 md:pt-32 md:pb-48 border-b border-border overflow-hidden">
-          {/* Subtle Grid Background */}
-          <div className="absolute inset-0 -z-10 h-full w-full bg-background bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-          <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary/5 opacity-20 blur-[100px]"></div>
+        <section className="relative pt-32 pb-20 md:pb-32 overflow-hidden border-b border-border/50">
+          {/* Background Grid */}
+          <div className="absolute inset-0 z-0 h-full w-full bg-background overflow-hidden">
+            <InteractiveGridPattern width={40} height={40} className="stroke-border/10 text-border/30 opacity-100" squaresClassName="hover:bg-primary/5" />
+            <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary/20 opacity-20 blur-[100px]"></div>
+          </div>
 
-          <div className="container px-4 mx-auto text-center max-w-5xl relative z-10">
-            <div className="inline-flex items-center rounded-full border border-border bg-card px-2 py-1 text-sm font-medium mb-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-              <div className="relative h-6 w-6">
-                <div className="absolute inset-0 animate-ping rounded-full bg-green-500/20" />
-                <div className="absolute inset-2 rounded-full bg-green-500" />
-              </div>
-              Build Faster
+          <div className="container px-4 mx-auto text-center relative z-10">
+
+            {/* Top Pill / Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background/50 backdrop-blur-sm text-sm font-medium mb-8 animate-in fade-in slide-in-from-bottom-4 shadow-sm hover:bg-muted/50 transition-colors cursor-pointer">
+              <span className="flex items-center justify-center bg-foreground text-background text-[10px] font-bold px-2 py-0.5 rounded-full leading-none">New</span>
+              <span className="text-muted-foreground flex items-center gap-1">
+                Everything you need to build end to end SaaS
+              </span>
+              <ArrowRight className="w-3.5 h-3.5 text-muted-foreground ml-1" />
             </div>
 
-            <h1 className="text-6xl md:text-7xl font-bold tracking-tighter mb-8 text-balance animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
-              Build complete applications.
-              <br />
-              <span className="text-muted-foreground">From UI to deployment.</span>
+            {/* Main Heading */}
+            <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-8 text-pretty  max-w-5xl mx-auto leading-[1.1]">
+              <span className="text-foreground">
+                Launch your startup in</span>
+              <span className="relative z-10 text-third inline-block ">
+                a day, not days
+              </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed text-balance animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
-              Design your UI, generate frontend and backend code, connect any database, and deploy — all from one platform.
+            {/* Subtitle */}
+            <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed text-balance">
+              Secure, scalable, production-ready UI, backend, database, and infrastructure
+
+              <span className="relative z-10 inline-block">
+                so you only focus on business logic.
+
+              </span>
             </p>
 
-            <div className="mb-10 flex flex-wrap items-center justify-center gap-6 text-sm font-medium animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300">
-              <div className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-2" /> Production-ready</div>
-              <div className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-2" /> Fully customizable</div>
-              <div className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-2" /> No lock-in</div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-in fade-in slide-in-from-bottom-10 duration-700 delay-400">
-              <Button size="lg" className="h-14 px-10 text-lg rounded-full shadow-lg hover:shadow-xl transition-all" asChild>
-                <Link to="/blocks">
-                  Start Building
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300">
+              <Button size="lg" className="h-14 px-8 text-base rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all outline outline-offset-2 outline-foreground/5 bg-foreground text-background hover:bg-foreground/90">
+                Get all access <span className="ml-2">✨</span>
+              </Button>
+              <Button size="lg" variant="outline" className="h-14 px-8 text-base rounded-full bg-background/50 backdrop-blur-sm hover:bg-muted/50 border-border shadow-sm group">
+                Explore more <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
+
+
+
           </div>
         </section>
+
+        {/* Tech Stack / Brand Icons */}
+        <div className="mt-20 pt-10 border-t border-border/40 max-w-4xl mx-auto overflow-hidden">
+          <p className="text-sm text-muted-foreground mb-6 font-medium">POWERING NEXT-GEN APPLICATIONS</p>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" className="h-8 w-auto hover:opacity-100 transition-opacity" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind" className="h-6 w-auto hover:opacity-100 transition-opacity" />
+            <img src="https://www.vectorlogo.zone/logos/nextjs/nextjs-icon.svg" alt="Next.js" className="h-8 w-auto hover:opacity-100 transition-opacity" />
+            <img src="https://www.vectorlogo.zone/logos/framer/framer-icon.svg" alt="Framer" className="h-8 w-auto hover:opacity-100 transition-opacity" />
+            <img src="https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg" alt="TypeScript" className="h-8 w-auto hover:opacity-100 transition-opacity" />
+          </div>
+        </div>
 
         {/* 2. PROBLEM SECTION */}
         <section className="py-32 border-b border-border bg-muted/20">
