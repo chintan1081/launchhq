@@ -68,14 +68,11 @@ export default function Index() {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300">
+            <Link to="/components" className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300">
               <Button size="lg" className="h-14 px-8 text-base rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all outline outline-offset-2 outline-foreground/5 bg-foreground text-background hover:bg-foreground/90">
-                Get all access <span className="ml-2">✨</span>
+                Get all access 
               </Button>
-              <Button size="lg" variant="outline" className="h-14 px-8 text-base rounded-full bg-background/50 backdrop-blur-sm hover:bg-muted/50 border-border shadow-sm group">
-                Explore more <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </div>
+            </Link>
 
 
 
@@ -83,8 +80,8 @@ export default function Index() {
         </section>
 
         {/* Tech Stack / Brand Icons */}
-        <div className="mt-20 pt-10 border-t border-border/40 max-w-4xl mx-auto overflow-hidden">
-          <p className="text-sm text-muted-foreground mb-6 font-medium">POWERING NEXT-GEN APPLICATIONS</p>
+        <div className="my-20 pt-10  max-w-4xl mx-auto overflow-hidden">
+          <p className="text-sm text-muted-foreground mb-6 text-center font-medium">POWERING NEXT-GEN APPLICATIONS</p>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
             <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" className="h-8 w-auto hover:opacity-100 transition-opacity" />
             <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind" className="h-6 w-auto hover:opacity-100 transition-opacity" />
@@ -95,7 +92,7 @@ export default function Index() {
         </div>
 
         {/* 2. PROBLEM SECTION */}
-        <section className="py-32 border-b border-border bg-muted/20">
+        <section className="py-32 border-y border-border/40 bg-muted/20">
           <div className="container px-4 mx-auto max-w-4xl">
             <div className="text-center mb-16">
               <h2 className="text-sm font-mono uppercase tracking-widest text-muted-foreground mb-4">The Problem</h2>
